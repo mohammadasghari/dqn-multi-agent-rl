@@ -1,13 +1,13 @@
 # Deep Q-learning (DQN) for Multi-agent Reinforcement Learning (RL)
 
-DQN implementation for two multi-agent environments: `agents_landmarks` and `predators_prey` (See [details.pdf](https://github.com/s3yyy3d-m/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of these environments).
+DQN implementation for two multi-agent environments: `agents_landmarks` and `predators_prey` (See [details.pdf](https://github.com/mohammadasghari/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of these environments).
 
 ## Code structure
 - `./environments/`: folder where the two environments (`agents_landmarks` and `predators_prey`) are stored. 
 1)`./environments/agents_landmarks`: in this environment, there exist ***n*** agents that must cooperate through actions to reach a set of ***n*** landmarks  in a two dimensional discrete ***k***-by-***k*** grid environment. 
 2)`./environments/predators_prey`: in this environment, ***n*** agents (called predators) must cooperate with each other to capture one prey in a two dimensional discrete ***k***-by-***k*** grid environment.
-- `./dqn_agent.py`: contains code for the implementation of DQN and its extensions (Double DQN, Dueling DQN, DQN with Prioritized Experience Replay) (See [details.pdf](https://github.com/s3yyy3d-m/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the DQN and its extensions).
-- `./brain.py`: contains code for the implementation of neural networks required for DQN (See [details.pdf](https://github.com/s3yyy3d-m/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the neural network implementation).
+- `./dqn_agent.py`: contains code for the implementation of DQN and its extensions (Double DQN, Dueling DQN, DQN with Prioritized Experience Replay) (See [details.pdf](https://github.com/mohammadasghari/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the DQN and its extensions).
+- `./brain.py`: contains code for the implementation of neural networks required for DQN (See [details.pdf](https://github.com/mohammadasghari/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the neural network implementation).
 - `./uniform_experience_replay.py`: contains code for the implementation of Uniform Experience Replay (UER) which can be used in DQN.
 - `./prioritized_experience_replay.py`: contains code for the implementation of Prioritized Experience Replay (PER) which can be used in DQN.
 - `./sum_tree.py`: contains code for the implementation of sum tree data structure which is used in Prioritized Experience Replay (PER).
