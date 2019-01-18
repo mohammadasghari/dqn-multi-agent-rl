@@ -4,8 +4,8 @@ DQN implementation for two multi-agent environments: `agents_landmarks` and `pre
 
 ## Code structure
 - `./environments/`: folder where the two environments (`agents_landmarks` and `predators_prey`) are stored. 
-1)`./environments/agents_landmarks`: in this environment, there exist ***n*** agents that must cooperate through actions to reach a set of ***n*** landmarks  in a two dimensional discrete ***k***-by-***k*** grid environment. 
-2)`./environments/predators_prey`: in this environment, ***n*** agents (called predators) must cooperate with each other to capture one prey in a two dimensional discrete ***k***-by-***k*** grid environment.
+--`./environments/agents_landmarks`: in this environment, there exist ***n*** agents that must cooperate through actions to reach a set of ***n*** landmarks  in a two dimensional discrete ***k***-by-***k*** grid environment. 
+--`./environments/predators_prey`: in this environment, ***n*** agents (called predators) must cooperate with each other to capture one prey in a two dimensional discrete ***k***-by-***k*** grid environment.
 - `./dqn_agent.py`: contains code for the implementation of DQN and its extensions (Double DQN, Dueling DQN, DQN with Prioritized Experience Replay) (See [details.pdf](https://github.com/mohammadasghari/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the DQN and its extensions).
 - `./brain.py`: contains code for the implementation of neural networks required for DQN (See [details.pdf](https://github.com/mohammadasghari/dqn-multi-agent-rl/blob/master/details.pdf) for a detailed description of the neural network implementation).
 - `./uniform_experience_replay.py`: contains code for the implementation of Uniform Experience Replay (UER) which can be used in DQN.
@@ -19,6 +19,7 @@ DQN implementation for two multi-agent environments: `agents_landmarks` and `pre
 
 ## Results
 #### Predators and Prey Environment
+In this environment, the prey is captured when one predator moves to the location of the prey while the other predators occupy, for support, the neighboring cells of the prey's location.
 ##### Fixed prey (mode 0) 
  <img src="/results_predators_prey/videos/prey_mode_0.gif" height="400px" width="400px" >
 
