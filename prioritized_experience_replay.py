@@ -7,7 +7,7 @@ Created on Wednesday Jan  16 2019
 
 import random
 from sum_tree import SumTree as ST
-
+from past.builtins import xrange
 
 class Memory(object):
     e = 0.05
