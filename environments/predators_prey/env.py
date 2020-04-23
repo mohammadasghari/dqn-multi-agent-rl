@@ -145,7 +145,7 @@ class PredatorsPrey(object):
         action_to_neighbor = []
         pos_repeat = [pos for _ in xrange(4)]
         for idx in xrange(4):
-            neighbor_pos = map(operator.add, pos_repeat[idx], self.A_DIFF[idx])
+            neighbor_pos =lsit( map(operator.add, pos_repeat[idx], self.A_DIFF[idx]))
             if neighbor_pos[0] in range(0,self.grid_size) and neighbor_pos[1] in range(0,self.grid_size)\
                     and neighbor_pos not in self.walls_positions:
                 neighbors_pos.append(neighbor_pos)
@@ -161,7 +161,7 @@ class PredatorsPrey(object):
         action_to_neighbor = []
         pos_repeat = [pos for _ in xrange(4)]
         for idx in xrange(4):
-            neighbor_pos = map(operator.add, pos_repeat[idx], self.A_DIFF[idx])
+            neighbor_pos = list(map(operator.add, pos_repeat[idx], self.A_DIFF[idx]))
             if neighbor_pos[0] in range(0,self.grid_size) and neighbor_pos[1] in range(0, self.grid_size)\
                     and neighbor_pos not in self.walls_positions:
                 neighbors_pos.append(neighbor_pos)
@@ -256,7 +256,7 @@ class PredatorsPrey(object):
         positions_action_applied = []
         for idx in xrange(len(pos_list)):
             if act_list[idx] != 4:
-                pos_act_applied = map(operator.add, pos_list[idx], self.A_DIFF[act_list[idx]])
+                pos_act_applied = list(map(operator.add, pos_list[idx], self.A_DIFF[act_list[idx]]))
                 # checks to make sure the new pos in inside the grid
                 for i in xrange(0, 2):
                     if pos_act_applied[i] < 0:
