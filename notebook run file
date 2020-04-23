@@ -1,0 +1,9 @@
+!git clone https://github.com/indhra007/dqn-multi-agent-rl.git
+!pip install pygame
+cd /content/dqn-multi-agent-rl
+
+!python predators_prey_multiagent.py
+
+# to change number of episodes go to the above .py file, at the end will find default episode values and
+# other default values, change these values according to the requirements
+#if using colab, then comment out the render function in predators-prey-.py
