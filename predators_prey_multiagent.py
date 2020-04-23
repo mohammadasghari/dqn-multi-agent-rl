@@ -154,7 +154,7 @@ if __name__ =="__main__":
 
     parser = argparse.ArgumentParser()
     # DQN Parameters
-    parser.add_argument('-e', '--episode-number', default=1, type=int, help='Number of episodes')
+    parser.add_argument('-e', '--episode-number', default=1000, type=int, help='Number of episodes')
     parser.add_argument('-l', '--learning-rate', default=0.00005, type=float, help='Learning rate')
     parser.add_argument('-op', '--optimizer', choices=['Adam', 'RMSProp'], default='RMSProp',
                         help='Optimization method')
