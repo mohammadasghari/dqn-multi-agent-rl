@@ -1,6 +1,7 @@
 !git clone https://github.com/indhra007/dqn-multi-agent-rl.git
 !pip install pygame
 cd /content/dqn-multi-agent-rl
+!pip install -e . 
 
 !python predators_prey_multiagent.py
 
