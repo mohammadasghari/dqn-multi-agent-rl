@@ -4,7 +4,7 @@ Created on Wednesday Jan  16 2019
 @author: Seyed Mohammad Asghari
 @github: https://github.com/s3yyy3d-m
 """
-# Brain for n agents
+
 from past.builtins import xrange
 import os
 from keras.models import Sequential, Model
