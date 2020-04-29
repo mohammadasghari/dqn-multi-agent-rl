@@ -54,27 +54,27 @@ class PredatorsPrey(object):
         self.predators_positions = []
         self.preys_positions = []
         self.walls_positions = []
-        self.render_flag = args['render']
-        self.recorder_flag = args['recorder']
+#         self.render_flag = args['render']
+#         self.recorder_flag = args['recorder']
         # enables visualizer
-        if self.render_flag:
-            [self.screen, self.my_font] = self.gui_setup()
-            self.step_num = 1
+#         if self.render_flag:
+#             [self.screen, self.my_font] = self.gui_setup()
+#             self.step_num = 1
 
-            resource_path = os.path.join(current_path, 'environments')  # The resource folder path
-            resource_path = os.path.join(resource_path, 'predators_prey')  # The resource folder path
-            image_path = os.path.join(resource_path, 'images')  # The image folder path
+#             resource_path = os.path.join(current_path, 'environments')  # The resource folder path
+#             resource_path = os.path.join(resource_path, 'predators_prey')  # The resource folder path
+#             image_path = os.path.join(resource_path, 'images')  # The image folder path
 
-            img = pygame.image.load(os.path.join(image_path, 'predator_prey.jpg')).convert()
-            self.img_predator_prey = pygame.transform.scale(img, (WIDTH, WIDTH))
-            img = pygame.image.load(os.path.join(image_path, 'predator.jpg')).convert()
-            self.img_predator = pygame.transform.scale(img, (WIDTH, WIDTH))
-            img = pygame.image.load(os.path.join(image_path, 'prey.jpg')).convert()
-            self.img_prey = pygame.transform.scale(img, (WIDTH, WIDTH))
+#             img = pygame.image.load(os.path.join(image_path, 'predator_prey.jpg')).convert()
+#             self.img_predator_prey = pygame.transform.scale(img, (WIDTH, WIDTH))
+#             img = pygame.image.load(os.path.join(image_path, 'predator.jpg')).convert()
+#             self.img_predator = pygame.transform.scale(img, (WIDTH, WIDTH))
+#             img = pygame.image.load(os.path.join(image_path, 'prey.jpg')).convert()
+#             self.img_prey = pygame.transform.scale(img, (WIDTH, WIDTH))
 
-            if self.recorder_flag:
-                self.snaps_path = os.path.join(current_path, 'results_predators_prey')  # The resource folder path
-                self.snaps_path = os.path.join(self.snaps_path, 'snaps')  # The resource folder path
+#             if self.recorder_flag:
+#                 self.snaps_path = os.path.join(current_path, 'results_predators_prey')  # The resource folder path
+#                 self.snaps_path = os.path.join(self.snaps_path, 'snaps')  # The resource folder path
 
         self.cells = []
         self.agents_positions_idx = []
@@ -284,58 +284,58 @@ class PredatorsPrey(object):
     def action_space(self):
         return len(self.A)
 
-    def render(self):
+#     def render(self):
 
-        pygame.time.wait(500)
-        pygame.display.flip()
+#         pygame.time.wait(500)
+#         pygame.display.flip()
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+#         for event in pygame.event.get():
+#             if event.type == pygame.QUIT:
+#                 sys.exit()
 
-        self.screen.fill(BLACK)
-        text = self.my_font.render("Step: {0}".format(self.step_num), 1, WHITE)
-        self.screen.blit(text, (5, 15))
+#         self.screen.fill(BLACK)
+#         text = self.my_font.render("Step: {0}".format(self.step_num), 1, WHITE)
+#         self.screen.blit(text, (5, 15))
 
-        # for row in range(self.grid_size):
-        #     for column in range(self.grid_size):
-        #         pos = (row, column)
-        #         if pos in self.predators_positions and pos in self.preys_positions:
-        #             color = ORANGE
-        #         elif pos in self.predators_positions:
-        #             color = BLUE
-        #         elif pos in self.preys_positions:
-        #             color = RED
-        #         else:
-        #             color = WHITE
-        #         pygame.draw.rect(self.screen, color,
-        #                          [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50, WIDTH,
-        #                           HEIGHT])
+#         # for row in range(self.grid_size):
+#         #     for column in range(self.grid_size):
+#         #         pos = (row, column)
+#         #         if pos in self.predators_positions and pos in self.preys_positions:
+#         #             color = ORANGE
+#         #         elif pos in self.predators_positions:
+#         #             color = BLUE
+#         #         elif pos in self.preys_positions:
+#         #             color = RED
+#         #         else:
+#         #             color = WHITE
+#         #         pygame.draw.rect(self.screen, color,
+#         #                          [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50, WIDTH,
+#         #                           HEIGHT])
 
-        for row in range(self.grid_size):
-            for column in range(self.grid_size):
-                pos = (row, column)
-                if pos in self.predators_positions and pos in self.preys_positions:
-                    self.screen.blit(self.img_predator_prey,
-                                     ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
-                elif pos in self.predators_positions:
-                    self.screen.blit(self.img_predator,
-                                     ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
-                elif pos in self.preys_positions:
-                    self.screen.blit(self.img_prey,
-                                     ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
-                else:
-                    color = WHITE
-                    pygame.draw.rect(self.screen, color,
-                                 [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50, WIDTH,
-                                  HEIGHT])
+#         for row in range(self.grid_size):
+#             for column in range(self.grid_size):
+#                 pos = (row, column)
+#                 if pos in self.predators_positions and pos in self.preys_positions:
+#                     self.screen.blit(self.img_predator_prey,
+#                                      ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
+#                 elif pos in self.predators_positions:
+#                     self.screen.blit(self.img_predator,
+#                                      ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
+#                 elif pos in self.preys_positions:
+#                     self.screen.blit(self.img_prey,
+#                                      ((MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50))
+#                 else:
+#                     color = WHITE
+#                     pygame.draw.rect(self.screen, color,
+#                                  [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN + 50, WIDTH,
+#                                   HEIGHT])
 
-        if self.recorder_flag:
-            file_name = "%04d.png" % self.step_num
-            pygame.image.save(self.screen, os.path.join(self.snaps_path, file_name))
+#         if self.recorder_flag:
+#             file_name = "%04d.png" % self.step_num
+#             pygame.image.save(self.screen, os.path.join(self.snaps_path, file_name))
 
-        if not self.terminal:
-            self.step_num += 1
+#         if not self.terminal:
+#             self.step_num += 1
 
     def gui_setup(self):
 
