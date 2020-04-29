@@ -70,8 +70,8 @@ class Environment(object):
         max_score = -10000
         for episode_num in xrange(self.episodes_number):
             state = self.env.reset()
-            if self.render:
-                self.env.render()
+#             if self.render:
+#                 self.env.render()
 
             random_moves = random.randint(0, self.max_random_moves)
 
@@ -79,8 +79,8 @@ class Environment(object):
             for _ in xrange(random_moves):
                 actions = [4 for _ in xrange(len(agents))]
                 state, _, _ = self.env.step(actions)
-                if self.render:
-                    self.env.render()
+#                 if self.render:
+#                     self.env.render()
 
             # converting list of positions to an array
             state = np.array(state)
@@ -115,8 +115,8 @@ class Environment(object):
                 state = next_state
                 reward_all += reward
 
-                if self.render:
-                    self.env.render()
+#                 if self.render:
+#                     self.env.render()
 
             rewards_list.append(reward_all)
             timesteps_list.append(time_step)
