@@ -92,7 +92,7 @@ class Brain(object):
 
         return model
 
-    def train(self, x, y, sample_weight=None, epochs=1, verbose=0):  # x is the input to the network and y is the output
+    def train(self, x, y, sample_weight=None, epochs=1, episode_num, verbose=0):  # x is the input to the network and y is the output
 
         self.model.fit(x, y, batch_size=len(x), sample_weight=sample_weight, epochs=epochs, verbose=verbose)
 
