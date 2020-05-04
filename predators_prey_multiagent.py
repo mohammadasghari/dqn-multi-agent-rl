@@ -107,7 +107,7 @@ class Environment(object):
                         if total_step >= self.filling_steps:
                             agent.decay_epsilon()
                             if time_step % self.steps_b_updates == 0:
-                                agent.replay()
+                                agent.replay(episode_num)
                             agent.update_target_model()
 
                 total_step += 1
