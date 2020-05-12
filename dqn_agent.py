@@ -59,7 +59,6 @@ class Agent(object):
 
     def find_targets_per(self, batch):
         batch_len = len(batch)
-
         states = np.array([o[1][0] for o in batch])
         states_ = np.array([o[1][3] for o in batch])
 
@@ -168,7 +167,7 @@ class Agent(object):
         if self.memory_model == 'UER':
             batch = self.memory.sample(self.batch_size)
             x, y = self.find_targets_uer(batch)
-            self.brain.train(x, y, episode_num = episode_num)
+            self.brain.train(x, y)#, episode_num = episode_num)
 
         elif self.memory_model == 'PER':
             [batch, batch_indices, batch_priorities] = self.memory.sample(self.batch_size)
@@ -181,7 +180,7 @@ class Agent(object):
                                                       for i in importance_sampling_weights]
             sample_weights = [errors[i] * normalized_importance_sampling_weights[i] for i in xrange(len(errors))]
 
-            self.brain.train(x, y, np.array(sample_weights),episode_num = episode_num)
+            self.brain.train(x, y, np.array(sample_weights))#,episode_num = episode_num)
 
             self.memory.update(batch_indices, errors)
 
